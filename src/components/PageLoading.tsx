@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
-import { Spin } from '@douyinfe/semi-ui';
 
-type IPageLoading = {};
-const PageLoading: FC<IPageLoading> = (props) => {
+type IPageLoading = { text?: string };
+const PageLoading: FC<IPageLoading> = ({ text }) => {
   console.log('pageLoading render...');
   return (
-    <Spin
-      size={'large'}
-      wrapperClassName={`h-screen w-screen flex items-center justify-center`}
-      tip={`Loading...`}></Spin>
+    <div
+      className={`z-30 h-screen w-screen text-center flex justify-center items-center flex-col`}>
+      <i className="i-eos-icons-loading text-4xl text-primary"></i>
+      <span className={`text-primary mt-1`}>{text ? text : 'Loading...'}</span>
+    </div>
   );
 };
 

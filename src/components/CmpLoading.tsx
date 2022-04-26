@@ -1,14 +1,15 @@
 import React, { FC } from 'react';
 import { Spin } from '@douyinfe/semi-ui';
 
-type ICmpLoading = {};
-const CmpLoading: FC<ICmpLoading> = (props) => {
+type ICmpLoading = { text?: string };
+const CmpLoading: FC<ICmpLoading> = ({ text }) => {
   console.log('cmpLoading render...');
   return (
-    <Spin
-      size={'large'}
-      wrapperClassName={`w-full h-full flex items-center justify-center`}
-      tip={`Loading...`}></Spin>
+    <div
+      className={`z-30 h-full w-full text-center flex justify-center items-center flex-col`}>
+      <i className="i-eos-icons-loading text-4xl text-primary"></i>
+      <span className={`text-primary mt-1`}>{text ? text : 'Loading...'}</span>
+    </div>
   );
 };
 
