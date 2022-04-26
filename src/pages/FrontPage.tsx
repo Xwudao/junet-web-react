@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { Button } from '@douyinfe/semi-ui';
 
 type IFrontPage = {};
 const FrontPage: FC<IFrontPage> = (props) => {
@@ -7,14 +8,15 @@ const FrontPage: FC<IFrontPage> = (props) => {
   const nav = useNavigate();
   return (
     <div>
-      front
+      <h1 className={`text-primary`}>FrontPage</h1>
+
       <p>
-        <button
+        <Button
           onClick={() => {
             nav('/search');
           }}>
-          to search
-        </button>
+          Ok
+        </Button>
       </p>
       <Outlet />
     </div>

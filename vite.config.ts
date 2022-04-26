@@ -10,5 +10,7 @@ export default defineConfig({
     alias: { '@': resolve('src') },
     extensions: ['.tsx', '.js', '.ts'],
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+  ],
 });

@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import PageLoading from '@/components/PageLoading';
 import { toPath } from '@/utils/string';
 import NotFound from '@/pages/common/NotFound';
+import CmpLoading from '@/components/CmpLoading';
 
 function loadingPages(loadPages: Record<string, () => Promise<{ [p: string]: any }>>) {
   const listComp: { Cmp: any; path: string }[] = [];
@@ -38,7 +39,7 @@ const AppRoutes: FC<IAppRoutes> = (props) => {
               index={item.path === ''}
               path={item.path}
               element={
-                <Suspense fallback={<PageLoading />}>
+                <Suspense fallback={<CmpLoading />}>
                   <item.Cmp />
                 </Suspense>
               }
@@ -59,7 +60,7 @@ const AppRoutes: FC<IAppRoutes> = (props) => {
               index={item.path === ''}
               path={item.path}
               element={
-                <Suspense fallback={<PageLoading />}>
+                <Suspense fallback={<CmpLoading />}>
                   <item.Cmp />
                 </Suspense>
               }
