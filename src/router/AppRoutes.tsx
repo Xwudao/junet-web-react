@@ -35,6 +35,7 @@ const AppRoutes: FC<IAppRoutes> = (props) => {
           {frontPages.map((item, index) => (
             <Route
               key={index}
+              index={item.path === ''}
               path={item.path}
               element={
                 <Suspense fallback={<PageLoading />}>
@@ -55,6 +56,7 @@ const AppRoutes: FC<IAppRoutes> = (props) => {
           {adminPages.map((item, index) => (
             <Route
               key={index}
+              index={item.path === ''}
               path={item.path}
               element={
                 <Suspense fallback={<PageLoading />}>

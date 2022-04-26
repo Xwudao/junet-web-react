@@ -1,7 +1,3 @@
-// export function toLine(name: string) {
-//   return name.replace(/([A-Z])/g, '_$1').toLowerCase();
-// }
-
 // function transform upper case to underline small case
 const toLine = (name: string) => {
   console.log('name', name);
@@ -27,11 +23,11 @@ function camelToUnderline(camelStr: string) {
 // transform filename to path
 const toPath = (name: string) => {
   // front slash
-  if (name.indexOf('/front/') > 0) {
+  if (name.indexOf('/front/') >= 0) {
     return getPath('front', name);
   }
   // admin slash
-  if (name.indexOf('/admin/') > 0) {
+  if (name.indexOf('/admin/') >= 0) {
     return getPath('admin', name);
   }
   return '';
@@ -40,7 +36,6 @@ const toPath = (name: string) => {
 const getPath = (prefix: string, path: string) => {
   let reg = new RegExp(`/${prefix}([/\w]+)*/(.*?)Page.tsx`, 'i');
   let res = reg.exec(path);
-  let paths = [];
   if (res) {
     console.log('res', res);
     let pathOne = res[1];
@@ -52,8 +47,8 @@ const getPath = (prefix: string, path: string) => {
         return toLine(item);
       });
     }
-    paths = [...tmp, toLine(pathTwo)];
-    return paths.join('/');
+    tmp.push(toLine(pathTwo));
+    return tmp.join('/');
   }
   return '';
 };
