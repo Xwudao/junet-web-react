@@ -8,10 +8,11 @@ const NotFound = () => {
 
   return (
     <>
-      <div className={`w-full h-full flex items-center flex-col sm:flex-row select-none`}>
+      <div
+        className={`dark:bg-dark w-full h-full flex items-center flex-col sm:flex-row select-none`}>
         <img className={`h-3/5 sm:h-3/5`} src={notFound} alt={`not found`} />
         <section className={`justify-items-start`}>
-          <h3 className={`font-bold text-4xl`}>Oh No! 你来到了荒野！</h3>
+          <h3 className={`dark:text-white font-bold text-4xl`}>Oh No! 你来到了荒野！</h3>
           <section className={`text-center sm:text-left mt-4 space-x-3`}>
             <Button
               onClick={() => {
