@@ -4,6 +4,8 @@
 
 html,
 body,
-#app {
+#root {
   @apply w-full h-full;
 }
+
+@import 'utils';

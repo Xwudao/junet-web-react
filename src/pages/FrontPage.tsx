@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { Button } from '@douyinfe/semi-ui';
+import { Banner, Button } from '@douyinfe/semi-ui';
 import { useRecoilState } from 'recoil';
 import { count } from '@/store/store';
 type IFrontPage = {};
@@ -11,7 +11,7 @@ const FrontPage: FC<IFrontPage> = (props) => {
   const [cs, setCs] = useRecoilState(count);
   return (
     <div>
-      count: {cs}
+      NavBar count: {cs}
       <Button
         onClick={() => {
           setCs(cs - 1);

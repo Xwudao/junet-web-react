@@ -1,0 +1,6 @@
+.show-in-mobile {
+  @apply sm:hidden;
+}
+.show-in-pc {
+  @apply hidden sm:block;
+}
