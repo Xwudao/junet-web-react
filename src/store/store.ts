@@ -5,10 +5,16 @@ const { persistAtom } = recoilPersist({
   key: name,
 });
 
-const count = atom<number>({
+const countState = atom<number>({
   key: 'count',
   default: 0,
   effects: [persistAtom],
 });
 
-export { count };
+const themeState = atom<'dark' | 'light'>({
+  key: 'theme',
+  default: 'light',
+  effects: [persistAtom],
+});
+
+export { countState, themeState };
