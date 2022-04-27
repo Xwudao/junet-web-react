@@ -5,6 +5,7 @@ import styles from './styles/login.module.scss';
 import { Button, Input } from '@douyinfe/semi-ui';
 import { useAuth } from '@/providers/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+
 type ILoginPage = {};
 const LoginPage: FC<ILoginPage> = (props) => {
   console.log('loginPage render...');
@@ -13,7 +14,7 @@ const LoginPage: FC<ILoginPage> = (props) => {
   return (
     <div className={`dark:bg-dark h-screen w-screen flex items-center justify-center`}>
       <div className={styles.loginWrapper}>
-        <img className={styles.img} src={noAccess} alt="waiting" />
+        <img className={`${styles.img} show-in-pc`} src={noAccess} alt="waiting" />
         <div className={styles.login}>
           <h3 className={`font-bold dark:text-white text-2xl mb-5 text-center`}>
             欢迎登录

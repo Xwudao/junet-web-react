@@ -9,7 +9,7 @@ const RegisterPage: FC<IRegisterPage> = (props) => {
   return (
     <div className={`dark:bg-dark h-screen w-screen flex items-center justify-center`}>
       <div className={styles.loginWrapper}>
-        <img className={styles.img} src={wait} alt="waiting" />
+        <img className={`${styles.img} show-in-pc`} src={wait} alt="waiting" />
         <div className={styles.login}>
           <h3 className={`font-bold dark:text-white text-2xl mb-5 text-center`}>
             欢迎注册

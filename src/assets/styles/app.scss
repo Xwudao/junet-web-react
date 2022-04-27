@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import 'utils';
+
 html,
 body,
 #root {
   @apply w-full h-full;
 }
-
-@import 'utils';
