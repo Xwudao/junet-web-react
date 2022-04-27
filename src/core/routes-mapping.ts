@@ -1,5 +1,5 @@
-export const routesMapping = {
-  front: '/',
+export const routesMapping: { [key: string]: string } = {
+  Front: '/',
   login: '/login',
-  admin: '/admin',
+  Admin: '/admin',
 };

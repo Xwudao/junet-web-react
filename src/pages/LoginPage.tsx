@@ -25,7 +25,11 @@ const LoginPage: FC<ILoginPage> = (props) => {
               placeholder="请输入密码"
               size={`large`}
             />
-            <Input prefix={<i className="i-ic-baseline-verified text-lg mx-2"></i>} placeholder="请输入验证码" size={`large`} />
+            <Input
+              prefix={<i className="i-ic-baseline-verified text-lg mx-2"></i>}
+              placeholder="请输入验证码"
+              size={`large`}
+            />
             <Button type="primary" size="large" theme={`solid`} block>
               登录
             </Button>

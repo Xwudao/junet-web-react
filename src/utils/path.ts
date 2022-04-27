@@ -1,4 +1,6 @@
 // function transform upper case to underline small case
+import { routesMapping } from '@/core/routes-mapping';
+
 const toLine = (name: string) => {
   if (!name.indexOf('/')) {
     return name.toLowerCase();
@@ -66,4 +68,19 @@ const trimPath = (path: string) => {
   }
   return path;
 };
-export { isIndex, trimPath, toLine, toPath };
+
+interface RootPath {
+  name?: string;
+  path: string; //by mapping
+  Cmp: any;
+  children: RootPath[];
+}
+// v2 get path
+const mappingPath = (name: string) => {
+  let path = routesMapping[name];
+  if (path) return path;
+  return '/' + toLine(name);
+};
+
+export { isIndex, mappingPath, trimPath, toLine, toPath };
+export type { RootPath };
