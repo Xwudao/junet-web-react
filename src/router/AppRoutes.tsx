@@ -1,7 +1,7 @@
 import React, { FC, lazy, Suspense } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import PageLoading from '@/components/PageLoading';
-import { toPath } from '@/utils/string';
+import { isIndex, toPath, trimPath } from '@/utils/path';
 import NotFound from '@/pages/common/NotFound';
 import CmpLoading from '@/components/CmpLoading';
 
@@ -18,7 +18,9 @@ const FrontPage = lazy(() => import('@/pages/FrontPage'));
 const AdminPage = lazy(() => import('@/pages/AdminPage'));
 const frontPages = loadingPages(import.meta.glob('../pages/front/**/*Page.tsx'));
 const adminPages = loadingPages(import.meta.glob('../pages/admin/**/*Page.tsx'));
-console.log(frontPages);
+
+console.log('frontPages', frontPages);
+console.log('adminPages', adminPages);
 
 type IAppRoutes = {};
 const AppRoutes: FC<IAppRoutes> = (props) => {
@@ -36,8 +38,8 @@ const AppRoutes: FC<IAppRoutes> = (props) => {
           {frontPages.map((item, index) => (
             <Route
               key={index}
-              index={item.path === ''}
-              path={item.path}
+              index={isIndex(item.path)}
+              path={trimPath(item.path)}
               element={
                 <Suspense fallback={<CmpLoading />}>
                   <item.Cmp />
@@ -57,8 +59,8 @@ const AppRoutes: FC<IAppRoutes> = (props) => {
           {adminPages.map((item, index) => (
             <Route
               key={index}
-              index={item.path === ''}
-              path={item.path}
+              index={isIndex(item.path)}
+              path={trimPath(item.path)}
               element={
                 <Suspense fallback={<CmpLoading />}>
                   <item.Cmp />
