@@ -16,7 +16,7 @@ const RegisterPage: FC<IRegisterPage> = (props) => {
           </h3>
           <div className={styles.form}>
             <Input
-              prefix={<i className="i-ri-user-4-line text-xl mx-2"></i>}
+              prefix={<i className="i-ph-user text-xl mx-2"></i>}
               placeholder="请输入用户名"
               size={`large`}
             />

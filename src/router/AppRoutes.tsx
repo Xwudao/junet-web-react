@@ -4,6 +4,7 @@ import { isIndex, mappingPath, RootPath, toLine, toPath, trimPath } from '@/util
 import NotFound from '@/pages/common/NotFound';
 import CmpLoading from '@/components/CmpLoading';
 import PageLoading from '@/components/PageLoading';
+import { RequireAuth } from '@/providers/AuthProvider';
 
 const computedPath = (loadPages: Record<string, () => Promise<{ [p: string]: any }>>) => {
   const paths = [] as RootPath[];
@@ -57,7 +58,9 @@ const AppRoutes: FC<IAppRoutes> = (props) => {
               path={trimPath(item.path)}
               element={
                 <Suspense fallback={<PageLoading />}>
-                  <item.Cmp />
+                  <RequireAuth>
+                    <item.Cmp />
+                  </RequireAuth>
                 </Suspense>
               }>
               {item.children?.map((child) => {
@@ -68,7 +71,9 @@ const AppRoutes: FC<IAppRoutes> = (props) => {
                     path={trimPath(child.path)}
                     element={
                       <Suspense fallback={<CmpLoading />}>
-                        <child.Cmp />
+                        <RequireAuth>
+                          <child.Cmp />
+                        </RequireAuth>
                       </Suspense>
                     }
                   />

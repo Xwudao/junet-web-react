@@ -4,6 +4,7 @@ import { useRecoilState } from 'recoil';
 import { countState } from '@/store/store';
 import { useTheme } from '@/providers/ThemeProvider';
 import { Banner, Button } from '@douyinfe/semi-ui';
+import { useAuth } from '@/providers/AuthProvider';
 
 type IIndexPage = {};
 const IndexPage: FC<IIndexPage> = (props) => {
@@ -11,6 +12,7 @@ const IndexPage: FC<IIndexPage> = (props) => {
   const nav = useNavigate();
   const [count, setCount] = useRecoilState(countState);
   const { toggleTheme } = useTheme();
+  const { user, logout } = useAuth();
   return (
     <div className={`h-full w-full dark:bg-dark`}>
       <Banner type={`success`} title={`测试：`} description={`你好`}></Banner>
@@ -29,6 +31,19 @@ const IndexPage: FC<IIndexPage> = (props) => {
           }}>
           Toggle Theme
         </Button>
+        {user ? (
+          <div className={`mt-3`}>
+            <Button
+              onClick={() => {
+                logout(() => {});
+              }}>
+              Logout
+            </Button>
+          </div>
+        ) : (
+          <p>You are not login</p>
+        )}
+        <span></span>
         <hr className={`my-3`} />
         <div className="bnts space-x-3">
           <Button
@@ -42,6 +57,18 @@ const IndexPage: FC<IIndexPage> = (props) => {
               nav('/login');
             }}>
             to Login Page
+          </Button>
+          <Button
+            onClick={() => {
+              nav('/admin');
+            }}>
+            to Admin Page
+          </Button>
+          <Button
+            onClick={() => {
+              nav('/admin/test');
+            }}>
+            to Admin / test Page
           </Button>
         </div>
         <hr className={`my-3`} />

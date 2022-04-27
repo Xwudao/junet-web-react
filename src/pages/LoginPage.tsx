@@ -3,9 +3,13 @@ import React, { FC } from 'react';
 import noAccess from '@/assets/illustrations/no-access.svg';
 import styles from './styles/login.module.scss';
 import { Button, Input } from '@douyinfe/semi-ui';
+import { useAuth } from '@/providers/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 type ILoginPage = {};
 const LoginPage: FC<ILoginPage> = (props) => {
   console.log('loginPage render...');
+  const nav = useNavigate();
+  const { login } = useAuth();
   return (
     <div className={`dark:bg-dark h-screen w-screen flex items-center justify-center`}>
       <div className={styles.loginWrapper}>
@@ -16,7 +20,7 @@ const LoginPage: FC<ILoginPage> = (props) => {
           </h3>
           <div className={styles.form}>
             <Input
-              prefix={<i className="i-ri-user-4-line text-xl mx-2"></i>}
+              prefix={<i className="i-ph-user text-xl mx-2"></i>}
               placeholder="请输入用户名"
               size={`large`}
             />
@@ -30,7 +34,16 @@ const LoginPage: FC<ILoginPage> = (props) => {
               placeholder="请输入验证码"
               size={`large`}
             />
-            <Button type="primary" size="large" theme={`solid`} block>
+            <Button
+              type="primary"
+              size="large"
+              theme={`solid`}
+              block
+              onClick={() => {
+                login('username', () => {
+                  nav(-1);
+                });
+              }}>
               登录
             </Button>
 

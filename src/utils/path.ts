@@ -1,5 +1,5 @@
 // function transform upper case to underline small case
-import { routesMapping } from '@/core/routes-mapping';
+import { routeMapping } from '@/core/config';
 
 const toLine = (name: string) => {
   if (!name.indexOf('/')) {
@@ -77,7 +77,7 @@ interface RootPath {
 }
 // v2 get path
 const mappingPath = (name: string) => {
-  let path = routesMapping[name];
+  let path = routeMapping[name];
   if (path) return path;
   return '/' + toLine(name);
 };
