@@ -30,12 +30,20 @@ const IndexPage: FC<IIndexPage> = (props) => {
           Toggle Theme
         </Button>
         <hr className={`my-3`} />
-        <Button
-          onClick={() => {
-            nav('/search');
-          }}>
-          to Search Page
-        </Button>
+        <div className="bnts space-x-3">
+          <Button
+            onClick={() => {
+              nav('/search');
+            }}>
+            to Search Page
+          </Button>
+          <Button
+            onClick={() => {
+              nav('/login');
+            }}>
+            to Login Page
+          </Button>
+        </div>
         <hr className={`my-3`} />
         <p className={`dark:text-white`}>Icon, use unocss/icons:</p>
         <div className={`space-x-3 my-3`}>

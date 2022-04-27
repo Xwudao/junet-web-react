@@ -4,3 +4,12 @@
 .show-in-pc {
   @apply hidden sm:block;
 }
+
+@layer utilities {
+  .show-in-mobile {
+    @apply sm:hidden;
+  }
+  .show-in-pc {
+    @apply hidden sm:block;
+  }
+}

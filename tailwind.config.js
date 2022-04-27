@@ -7,8 +7,12 @@ module.exports = {
         primary: '#e67e22',
         dark: '#232429',
       },
+      width: {
+        100: '25rem',
+        200: '50rem',
+      },
       screens: {
-        mobile: '390px',
+        // mobile: '390px',
         tablet: '640px',
         // => @media (min-width: 640px) { ... }
         laptop: '1024px',
