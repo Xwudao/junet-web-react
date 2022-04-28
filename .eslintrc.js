@@ -22,6 +22,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    './.eslintrc-auto-import.json',
     'plugin:prettier/recommended', // Make sure this is always the last element in the array.
   ],
   plugins: ['simple-import-sort', 'prettier'],

@@ -40,6 +40,7 @@
     "tailwindcss": "^3.0.24",
     "typescript": "^4.6.3",
     "unocss": "^0.31.16",
+    "unplugin-auto-import": "^0.7.1",
     "vite": "^2.9.5",
     "vite-plugin-semi-theme": "^0.2.0"
   }

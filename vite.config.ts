@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import UnoCSS from 'unocss/vite';
 import UnocssIcons from '@unocss/preset-icons';
+import AutoImport from 'unplugin-auto-import/vite';
 const resolve = (p: string) => {
   return path.resolve(__dirname, p);
 };
@@ -19,6 +20,21 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    AutoImport({
+      imports: ['react', 'react-router-dom'],
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/, // .md
+      ],
+      eslintrc: {
+        enabled: true, // Default `false`
+        filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
+        globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+      },
+      dts: './auto-imports.d.ts',
+    }),
     legacy({
       targets: ['defaults', 'not IE 11'],
     }),

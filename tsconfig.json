@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "auto-imports.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
