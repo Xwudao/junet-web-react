@@ -10,6 +10,7 @@ const resolve = (p: string) => {
   return path.resolve(__dirname, p);
 };
 // https://vitejs.dev/config/
+// @ts-ignore
 export default defineConfig({
   resolve: {
     alias: { '@': resolve('src') },
@@ -50,7 +51,7 @@ export default defineConfig({
             display: 'inline-block',
           },
         }),
-        // presetUno() - 取消注释以启用默认的预设
+        // - 取消注释以启用默认的预设
       ],
     }),
   ],
