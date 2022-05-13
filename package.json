@@ -42,6 +42,7 @@
     "unocss": "^0.31.17",
     "unplugin-auto-import": "^0.7.1",
     "vite": "^2.9.6",
+    "vite-plugin-checker": "^0.4.6",
     "vite-plugin-semi-theme": "^0.2.0"
   }
 }

@@ -5,6 +5,7 @@ import * as path from 'path';
 import UnoCSS from 'unocss/vite';
 import UnocssIcons from '@unocss/preset-icons';
 import AutoImport from 'unplugin-auto-import/vite';
+import checker from 'vite-plugin-checker';
 const resolve = (p: string) => {
   return path.resolve(__dirname, p);
 };
@@ -20,6 +21,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    checker({ typescript: true }),
     AutoImport({
       imports: ['react', 'react-router-dom'],
       include: [
@@ -39,8 +41,6 @@ export default defineConfig({
       targets: ['defaults', 'not IE 11'],
     }),
     UnoCSS({
-      // 但 `presets` 被指定时，默认的预设将会被禁用，
-      // 因此你可以在你原有的 App 上使用纯 CSS 图标而不需要担心 CSS 冲突的问题。
       presets: [
         UnocssIcons({
           // 其他选项
