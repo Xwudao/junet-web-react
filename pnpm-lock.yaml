@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 specifiers:
   '@douyinfe/semi-ui': ^2.9.1
@@ -37,13 +37,13 @@ specifiers:
   vite-plugin-semi-theme: ^0.2.0
 
 dependencies:
-  '@douyinfe/semi-ui': 2.10.1_z4eu6arata2duglodyhq3vxary
+  '@douyinfe/semi-ui': 2.10.1_cf094f022098343a196e1e0f0dd6e08e
   axios: 0.27.2
   prop-types: 15.7.2
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
-  react-router-dom: 6.3.0_ef5jwxihqo6n7gxfmzogljlgcm
-  recoil: 0.7.2_ef5jwxihqo6n7gxfmzogljlgcm
+  react-router-dom: 6.3.0_react-dom@18.1.0+react@18.1.0
+  recoil: 0.7.2_react-dom@18.1.0+react@18.1.0
   recoil-persist: 4.1.0_recoil@0.7.2
   sass: 1.51.0
 
@@ -52,7 +52,7 @@ devDependencies:
   '@types/node': 17.0.33
   '@types/react': 18.0.9
   '@types/react-dom': 18.0.4
-  '@typescript-eslint/parser': 5.23.0_hcfsmds2fshutdssjqluwm76uu
+  '@typescript-eslint/parser': 5.23.0_eslint@8.15.0+typescript@4.6.4
   '@unocss/preset-icons': 0.31.17
   '@vitejs/plugin-legacy': 1.8.2_vite@2.9.9
   '@vitejs/plugin-react': 1.3.2
@@ -60,7 +60,7 @@ devDependencies:
   eslint: 8.15.0
   eslint-config-prettier: 8.5.0_eslint@8.15.0
   eslint-plugin-import: 2.26.0_eslint@8.15.0
-  eslint-plugin-prettier: 4.0.0_iqftbjqlxzn3ny5nablrkczhqi
+  eslint-plugin-prettier: 4.0.0_440b30a60bbe5bb6e3ad0057150b2782
   eslint-plugin-react: 7.29.4_eslint@8.15.0
   eslint-plugin-react-hooks: 4.5.0_eslint@8.15.0
   eslint-plugin-simple-import-sort: 7.0.0_eslint@8.15.0
@@ -368,7 +368,7 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@douyinfe/semi-animation-react/2.10.1_x663xrcgpsbxdo4lrqojjfx5fu:
+  /@douyinfe/semi-animation-react/2.10.1_bfbdbbc4467c8371bb8b8c1c9496fd2d:
     resolution: {integrity: sha512-fsF1JWDfsd4NaeFaFlNWiyOwEipadVddtkgqmE2Gj7psx2z0qnwJwyAsUlmJm7stWPjbdTErhk68CqcGiQlxIw==}
     peerDependencies:
       prop-types: 15.7.2
@@ -436,7 +436,7 @@ packages:
       glob: 7.2.0
     dev: false
 
-  /@douyinfe/semi-ui/2.10.1_z4eu6arata2duglodyhq3vxary:
+  /@douyinfe/semi-ui/2.10.1_cf094f022098343a196e1e0f0dd6e08e:
     resolution: {integrity: sha512-oymvFiVOZBUmlNTWffLk8zI1VF97KxyNyZ8cnUMk24fwdg5m2qdQBzOHN4Uz9rXwJxjskV4EobZW51C1L3Ij5w==}
     peerDependencies:
       '@types/react': '>=16.0.0'
@@ -447,7 +447,7 @@ packages:
     dependencies:
       '@babel/runtime-corejs3': 7.17.9
       '@douyinfe/semi-animation': 2.10.1
-      '@douyinfe/semi-animation-react': 2.10.1_x663xrcgpsbxdo4lrqojjfx5fu
+      '@douyinfe/semi-animation-react': 2.10.1_bfbdbbc4467c8371bb8b8c1c9496fd2d
       '@douyinfe/semi-foundation': 2.10.1
       '@douyinfe/semi-icons': 2.10.1_react@18.1.0
       '@douyinfe/semi-illustrations': 2.10.1_react@18.1.0
@@ -464,9 +464,9 @@ packages:
       prop-types: 15.7.2
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
-      react-resizable: 1.11.1_ef5jwxihqo6n7gxfmzogljlgcm
-      react-sortable-hoc: 2.0.0_ef5jwxihqo6n7gxfmzogljlgcm
-      react-window: 1.8.7_ef5jwxihqo6n7gxfmzogljlgcm
+      react-resizable: 1.11.1_react-dom@18.1.0+react@18.1.0
+      react-sortable-hoc: 2.0.0_react-dom@18.1.0+react@18.1.0
+      react-window: 1.8.7_react-dom@18.1.0+react@18.1.0
       resize-observer-polyfill: 1.5.1
       scroll-into-view-if-needed: 2.2.29
       utility-types: 3.10.0
@@ -623,7 +623,7 @@ packages:
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
 
-  /@typescript-eslint/parser/5.23.0_hcfsmds2fshutdssjqluwm76uu:
+  /@typescript-eslint/parser/5.23.0_eslint@8.15.0+typescript@4.6.4:
     resolution: {integrity: sha512-V06cYUkqcGqpFjb8ttVgzNF53tgbB/KoQT/iB++DOIExKmzI9vBJKjZKt/6FuV9c+zrDsvJKbJ2DOCYwX91cbw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1629,7 +1629,7 @@ packages:
       tsconfig-paths: 3.14.1
     dev: true
 
-  /eslint-plugin-prettier/4.0.0_iqftbjqlxzn3ny5nablrkczhqi:
+  /eslint-plugin-prettier/4.0.0_440b30a60bbe5bb6e3ad0057150b2782:
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -2747,7 +2747,7 @@ packages:
       scheduler: 0.22.0
     dev: false
 
-  /react-draggable/4.4.5_ef5jwxihqo6n7gxfmzogljlgcm:
+  /react-draggable/4.4.5_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-OMHzJdyJbYTZo4uQE393fHcqqPYsEtkjfMgvCHr6rejT+Ezn4OZbNyGH50vv+SunC1RMvwOTSWkEODQLzw1M9g==}
     peerDependencies:
       react: '>= 16.3.0'
@@ -2767,7 +2767,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-resizable/1.11.1_ef5jwxihqo6n7gxfmzogljlgcm:
+  /react-resizable/1.11.1_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-S70gbLaAYqjuAd49utRHibtHLrHXInh7GuOR+6OO6RO6uleQfuBnWmZjRABfqNEx3C3Z6VPLg0/0uOYFrkfu9Q==}
     peerDependencies:
       react: 0.14.x || 15.x || 16.x || 17.x
@@ -2776,10 +2776,10 @@ packages:
       prop-types: 15.8.1
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
-      react-draggable: 4.4.5_ef5jwxihqo6n7gxfmzogljlgcm
+      react-draggable: 4.4.5_react-dom@18.1.0+react@18.1.0
     dev: false
 
-  /react-router-dom/6.3.0_ef5jwxihqo6n7gxfmzogljlgcm:
+  /react-router-dom/6.3.0_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-uaJj7LKytRxZNQV8+RbzJWnJ8K2nPsOOEuX7aQstlMZKQT0164C+X2w6bnkqU3sjtLvpd5ojrezAyfZ1+0sStw==}
     peerDependencies:
       react: '>=16.8'
@@ -2800,7 +2800,7 @@ packages:
       react: 18.1.0
     dev: false
 
-  /react-sortable-hoc/2.0.0_ef5jwxihqo6n7gxfmzogljlgcm:
+  /react-sortable-hoc/2.0.0_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-JZUw7hBsAHXK7PTyErJyI7SopSBFRcFHDjWW5SWjcugY0i6iH7f+eJkY8cJmGMlZ1C9xz1J3Vjz0plFpavVeRg==}
     peerDependencies:
       react: ^16.3.0 || ^17.0.0
@@ -2813,7 +2813,7 @@ packages:
       react-dom: 18.1.0_react@18.1.0
     dev: false
 
-  /react-window/1.8.7_ef5jwxihqo6n7gxfmzogljlgcm:
+  /react-window/1.8.7_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-JHEZbPXBpKMmoNO1bNhoXOOLg/ujhL/BU4IqVU9r8eQPcy5KQnGHIHDRkJ0ns9IM5+Aq5LNwt3j8t3tIrePQzA==}
     engines: {node: '>8.0.0'}
     peerDependencies:
@@ -2844,10 +2844,10 @@ packages:
     peerDependencies:
       recoil: ^0.6.1
     dependencies:
-      recoil: 0.7.2_ef5jwxihqo6n7gxfmzogljlgcm
+      recoil: 0.7.2_react-dom@18.1.0+react@18.1.0
     dev: false
 
-  /recoil/0.7.2_ef5jwxihqo6n7gxfmzogljlgcm:
+  /recoil/0.7.2_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-OT4pI7FOUHcIoRtjsL5Lqq+lFFzQfir4MIbUkqyJ3nqv3WfBP1pHepyurqTsK5gw+T+I2R8+uOD28yH+Lg5o4g==}
     peerDependencies:
       react: '>=16.13.1'

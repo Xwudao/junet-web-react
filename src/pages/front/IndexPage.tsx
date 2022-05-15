@@ -41,7 +41,7 @@ const IndexPage: FC<IIndexPage> = (props) => {
             </Button>
           </div>
         ) : (
-          <p>You are not login</p>
+          <p className={`dark:text-white`}>You are not login</p>
         )}
         <span></span>
         <hr className={`my-3`} />

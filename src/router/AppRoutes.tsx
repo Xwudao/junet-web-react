@@ -5,42 +5,7 @@ import NotFound from '@/pages/common/NotFound';
 import CmpLoading from '@/components/CmpLoading';
 import PageLoading from '@/components/PageLoading';
 import { RequireAuth } from '@/providers/AuthProvider';
-
-const computedPath = (loadPages: Record<string, () => Promise<{ [p: string]: any }>>) => {
-  const paths = [] as RootPath[];
-
-  for (let pathKey in loadPages) {
-    let reg = new RegExp(`/pages/(.*?)Page.tsx`, 'i');
-    let res = reg.exec(pathKey);
-    if (res) {
-      // if index-1 has not /
-      let pathOne = res[1];
-      if (pathOne.indexOf('/') === -1) {
-        paths.push({
-          name: pathOne.toLowerCase(),
-          path: mappingPath(pathOne),
-          Cmp: lazy(loadPages[pathKey] as any),
-          children: [],
-        });
-      } else {
-        let tmp = pathOne.split('/');
-        let firstChar = tmp[0];
-        let found = paths.find((item) => item.name === firstChar.toLowerCase());
-        if (found) {
-          found.children.push({
-            name: tmp[1],
-            // path=pathOne.split by /, and remove first one
-            path: toLine(tmp.slice(1).join('/')),
-            Cmp: lazy(loadPages[pathKey] as any),
-            children: [],
-          });
-        }
-      }
-    }
-  }
-  console.log('paths', paths);
-  return paths;
-};
+import { computedPath } from '@/router/routers';
 
 const cmps = computedPath(import.meta.glob('../pages/**/*Page.tsx'));
 
