@@ -1,52 +1,80 @@
-import React, { FC } from 'react';
-
+import React from 'react';
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  styled,
+  TextField,
+  Typography,
+} from '@mui/material';
 import wait from '@/assets/illustrations/wait.svg';
-import styles from './styles/login.module.scss';
-import { Button, Input } from '@douyinfe/semi-ui';
-type IRegisterPage = {};
-const RegisterPage: FC<IRegisterPage> = (props) => {
-  console.log('registerPage render...');
-  return (
-    <div className={`dark:bg-dark h-screen w-screen flex items-center justify-center`}>
-      <div className={styles.loginWrapper}>
-        <img className={`${styles.img} show-in-pc`} src={wait} alt="waiting" />
-        <div className={styles.login}>
-          <h3 className={`font-bold dark:text-white text-2xl mb-5 text-center`}>
-            欢迎注册
-          </h3>
-          <div className={styles.form}>
-            <Input
-              prefix={<i className="i-ph-user text-xl mx-2"></i>}
-              placeholder="请输入用户名"
-              size={`large`}
-            />
-            <Input
-              prefix={<i className="i-mdi-key-variant text-lg mx-2"></i>}
-              placeholder="请输入密码"
-              size={`large`}
-            />
-            <Input
-              prefix={<i className="i-ic-baseline-verified text-lg mx-2"></i>}
-              placeholder="请输入验证码"
-              size={`large`}
-            />
-            <Button type="primary" size="large" theme={`solid`} block>
-              注册
-            </Button>
 
-            <p className={`text-sm dark:text-white`}>
-              已经有账号？
-              <a href="#/login" className={`text-blue-600`}>
-                点击登录
-              </a>
-              <a href="#" className={`text-blue-600 ml-3`}>
-                返回首页
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+const A = styled('a')(
+  ({ theme }) => `
+  color: ${theme.palette.info.main};
+  text-decoration: none;
+`,
+);
+
+const RegisterPage = () => {
+  console.log('register2Page render...');
+  return (
+    <Container maxWidth="md" sx={{ paddingTop: { xs: 10, sm: 10, md: 15 } }}>
+      <Grid container className={`shadow`} p={4}>
+        <Grid item xs={0} sm={6}>
+          <Box>
+            <img src={wait} alt="waiting" />
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Box textAlign={'center'}>
+            <Typography component={`h2`} fontWeight={'bolder'} fontSize={25} mb={2}>
+              用户注册
+            </Typography>
+            <TextField
+              fullWidth
+              size={`small`}
+              variant="outlined"
+              label="用户名"
+              margin="normal"
+              required
+              autoFocus
+            />
+            <TextField
+              fullWidth
+              size={`small`}
+              variant="outlined"
+              label="密码"
+              margin="normal"
+              required
+            />
+            <TextField
+              fullWidth
+              size={`small`}
+              variant="outlined"
+              label="验证码"
+              margin="normal"
+              required
+            />
+            <Box>
+              <Button fullWidth variant={`contained`} sx={{ marginTop: 2 }}>
+                注册
+              </Button>
+            </Box>
+            <Box mt={2} textAlign={'left'}>
+              <Typography component={`p`}>
+                已经有账号？
+                <A href="/#/login">点击登录</A>
+                <A href="#" className={`ml-3`}>
+                  返回首页
+                </A>
+              </Typography>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 

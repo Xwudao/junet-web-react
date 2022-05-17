@@ -1,16 +1,18 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
-import { ThemeProvider } from '@/providers/ThemeProvider';
+// import { ThemeProvider } from '@/providers/ThemeProvider';
 import { AuthProvider } from '@/providers/AuthProvider';
 import AppRoutesConfig from '@/router/AppRoutesConfig';
 import { HashRouter as Router } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material';
 
 const App = () => {
+  const theme = createTheme({});
   return (
     <>
       <RecoilRoot>
         <AuthProvider>
-          <ThemeProvider>
+          <ThemeProvider theme={theme}>
             <Router>
               <AppRoutesConfig />
             </Router>

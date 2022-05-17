@@ -11,6 +11,7 @@ const resolve = (p: string) => {
 };
 // https://vitejs.dev/config/
 // @ts-ignore
+// @ts-ignore
 export default defineConfig({
   resolve: {
     alias: { '@': resolve('src') },
@@ -43,6 +44,7 @@ export default defineConfig({
     }),
     UnoCSS({
       presets: [
+        //@ts-ignore
         UnocssIcons({
           // 其他选项
           prefix: 'i-',
