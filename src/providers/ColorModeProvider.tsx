@@ -7,7 +7,7 @@ import { themeState } from '@/store/store';
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 type IColorModeProvider = {
-  children: React.ReactElement;
+  children: React.ReactNode;
 };
 const ColorModeProvider: FC<IColorModeProvider> = (props) => {
   console.log('colorModeProvider render...');

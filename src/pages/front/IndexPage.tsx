@@ -8,6 +8,7 @@ import {
   CardHeader,
   Paper,
   Stack,
+  Tooltip,
   Typography,
 } from '@mui/material';
 import { useMode } from '@/providers/ColorModeProvider';
@@ -25,14 +26,16 @@ const IndexPage: FC<IIndexPage> = (props) => {
         <Card sx={{ p: 2 }}>
           <Typography>Button</Typography>
           <Stack direction={`row`} spacing={2}>
-            <Button
-              size={`small`}
-              variant={`contained`}
-              onClick={() => {
-                mode.toggleColorMode();
-              }}>
-              Change Theme
-            </Button>
+            <Tooltip title={`change the theme mode`}>
+              <Button
+                size={`small`}
+                variant={`contained`}
+                onClick={() => {
+                  mode.toggleColorMode();
+                }}>
+                Change Theme
+              </Button>
+            </Tooltip>
             <Button
               size={`small`}
               variant={`contained`}
