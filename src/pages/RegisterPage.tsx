@@ -34,12 +34,12 @@ const RegisterPage = () => {
             justifyContent: 'center',
           }}>
           <Grid container p={4} className={`shadow`}>
-            <Grid item xs={0} sm={6}>
+            <Grid item xs={0} sm={7}>
               <Box>
                 <img src={wait} alt="waiting" />
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={5}>
               <Box textAlign={'center'}>
                 <Typography variant={`h5`} fontWeight={'bold'} mb={2}>
                   用户注册

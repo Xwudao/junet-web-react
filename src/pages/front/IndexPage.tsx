@@ -13,6 +13,7 @@ const IndexPage: FC<IIndexPage> = (props) => {
       <Paper elevation={1} sx={{ height: '100%', p: 1 }}>
         <Stack direction={`row`} spacing={2}>
           <Button
+            size={`small`}
             variant={`contained`}
             onClick={() => {
               mode.toggleColorMode();
@@ -20,6 +21,7 @@ const IndexPage: FC<IIndexPage> = (props) => {
             Change Theme
           </Button>
           <Button
+            size={`small`}
             variant={`contained`}
             onClick={() => {
               nav('/login');

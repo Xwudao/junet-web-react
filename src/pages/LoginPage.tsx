@@ -41,12 +41,12 @@ const LoginPage: FC<ILogin2Page> = (props) => {
             sx={{ paddingTop: { xs: 10, sm: 10, md: 15 } }}
             className={`shadow`}
             p={4}>
-            <Grid item xs={0} sm={6}>
+            <Grid item xs={0} sm={7}>
               <Box>
                 <img src={noAccess} alt="waiting" className={`mt-3`} />
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={5}>
               <Box textAlign={'center'}>
                 <Typography variant={`h5`} mb={2}>
                   登录系统

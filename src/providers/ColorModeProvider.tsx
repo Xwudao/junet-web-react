@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { createTheme, CssBaseline, PaletteMode, ThemeProvider } from '@mui/material';
 import { getDesignTokens } from '@/core/theme';
+import { useRecoilState } from 'recoil';
+import { themeState } from '@/store/store';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -9,7 +11,8 @@ type IColorModeProvider = {
 };
 const ColorModeProvider: FC<IColorModeProvider> = (props) => {
   console.log('colorModeProvider render...');
-  const [mode, setMode] = useState<PaletteMode>('light');
+
+  const [mode, setMode] = useRecoilState(themeState);
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
