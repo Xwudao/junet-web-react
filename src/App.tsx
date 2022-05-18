@@ -4,22 +4,23 @@ import { RecoilRoot } from 'recoil';
 import { AuthProvider } from '@/providers/AuthProvider';
 import AppRoutesConfig from '@/router/AppRoutesConfig';
 import { HashRouter as Router } from 'react-router-dom';
-import { createTheme, ThemeProvider } from '@mui/material';
+import ColorModeProvider from '@/providers/ColorModeProvider';
 
 const App = () => {
-  const theme = createTheme({});
   return (
     <>
       <RecoilRoot>
         <AuthProvider>
-          <ThemeProvider theme={theme}>
+          {/*<ThemeProvider theme={theme}>*/}
+          <ColorModeProvider>
             <Router>
               <AppRoutesConfig />
             </Router>
-            {/*<Suspense fallback={<PageLoading />}>*/}
-            {/*  <AppRoutes />*/}
-            {/*</Suspense>*/}
-          </ThemeProvider>
+          </ColorModeProvider>
+          {/*<Suspense fallback={<PageLoading />}>*/}
+          {/*  <AppRoutes />*/}
+          {/*</Suspense>*/}
+          {/*</ThemeProvider>*/}
         </AuthProvider>
       </RecoilRoot>
     </>
