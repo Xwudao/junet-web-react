@@ -1,5 +1,5 @@
-import legacy from '@vitejs/plugin-legacy';
 import { defineConfig } from 'vite';
+import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import UnoCSS from 'unocss/vite';
@@ -10,8 +10,6 @@ const resolve = (p: string) => {
   return path.resolve(__dirname, p);
 };
 // https://vitejs.dev/config/
-// @ts-ignore
-// @ts-ignore
 export default defineConfig({
   resolve: {
     alias: { '@': resolve('src') },
@@ -42,20 +40,7 @@ export default defineConfig({
     legacy({
       targets: ['defaults', 'not IE 11'],
     }),
-    UnoCSS({
-      presets: [
-        //@ts-ignore
-        UnocssIcons({
-          // 其他选项
-          prefix: 'i-',
-          extraProperties: {
-            'vertical-align': 'middle',
-            display: 'inline-block',
-          },
-        }),
-        // - 取消注释以启用默认的预设
-      ],
-    }),
+    UnoCSS(resolve('./uno.config.ts')),
   ],
   css: { modules: { localsConvention: 'camelCase' } },
 });

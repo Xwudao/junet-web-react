@@ -4,10 +4,9 @@ import ReactDOM from 'react-dom/client';
 import '@/assets/styles/app.scss';
 import App from './App';
 
-import 'uno.css'
+import 'uno.css';
 // import '@unocss/reset/normalize.css'
 // import '@unocss/reset/tailwind.css'
-
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';

@@ -59,6 +59,11 @@ const IndexPage: FC<IIndexPage> = (props) => {
             <Icon icon={`i-ic-baseline-remove-red-eye`} />
             <Icon icon={`i-eos-icons-loading`} />
           </Stack>
+          <Typography>Uno css: </Typography>
+          <div className={`flex items-center bg-green-500`}>
+            <div>line 1</div>
+            <div>line 2</div>
+          </div>
         </Card>
       </Paper>
     </>
