@@ -20,6 +20,7 @@ export default defineConfig({
     terserOptions: { compress: { drop_debugger: true, drop_console: true } },
   },
   plugins: [
+    UnoCSS(resolve('./uno.config.ts')),
     react(),
     checker({ typescript: true }),
     AutoImport({
@@ -40,7 +41,6 @@ export default defineConfig({
     legacy({
       targets: ['defaults', 'not IE 11'],
     }),
-    UnoCSS(resolve('./uno.config.ts')),
   ],
   css: { modules: { localsConvention: 'camelCase' } },
 });

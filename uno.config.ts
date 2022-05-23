@@ -4,10 +4,8 @@ import presetAttributify from '@unocss/preset-attributify';
 import presetWind from '@unocss/preset-wind';
 
 export default defineConfig({
-  rules: [['custom-rule', { color: 'red' }]],
-  shortcuts: {
-    'custom-shortcut': 'text-lg text-orange hover:text-teal',
-  },
+  rules: [],
+  shortcuts: {},
   presets: [
     //@ts-ignore
     presetWind(),
@@ -15,6 +13,7 @@ export default defineConfig({
     presetAttributify(),
     //@ts-ignore
     UnocssIcons({
+      scale: 1,
       prefix: 'i-',
       extraProperties: {
         'vertical-align': 'middle',
