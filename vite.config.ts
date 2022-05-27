@@ -6,6 +6,8 @@ import UnoCSS from 'unocss/vite';
 import UnocssIcons from '@unocss/preset-icons';
 import AutoImport from 'unplugin-auto-import/vite';
 import checker from 'vite-plugin-checker';
+
+import vitePluginForArco from '@arco-plugins/vite-react';
 const resolve = (p: string) => {
   return path.resolve(__dirname, p);
 };
@@ -21,8 +23,10 @@ export default defineConfig({
     terserOptions: { compress: { drop_debugger: true, drop_console: true } },
   },
   plugins: [
+    UnoCSS(resolve('./uno.config.ts')),
     react(),
     checker({ typescript: true }),
+    vitePluginForArco({}),
     AutoImport({
       imports: ['react', 'react-router-dom'],
       include: [
@@ -40,19 +44,6 @@ export default defineConfig({
     }),
     legacy({
       targets: ['defaults', 'not IE 11'],
-    }),
-    UnoCSS({
-      presets: [
-        UnocssIcons({
-          // 其他选项
-          prefix: 'i-',
-          extraProperties: {
-            'vertical-align': 'middle',
-            display: 'inline-block',
-          },
-        }),
-        // - 取消注释以启用默认的预设
-      ],
     }),
   ],
   css: { modules: { localsConvention: 'camelCase' } },

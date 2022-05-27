@@ -1,7 +1,7 @@
 import React from 'react';
 import notFound from '@/assets/illustrations/404.svg';
-import { Button } from '@douyinfe/semi-ui';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '@arco-design/web-react';
 const NotFound = () => {
   console.log('NotFound render...');
   const nav = useNavigate();
@@ -22,7 +22,6 @@ const NotFound = () => {
             </Button>
             <Button
               type={`primary`}
-              theme={`solid`}
               onClick={() => {
                 nav(-1);
               }}>

@@ -17,10 +17,10 @@ const ThemeProvider = ({ children }: any) => {
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
-      document.body.setAttribute('theme-mode', 'dark');
+      document.body.setAttribute('arco-theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
-      document.body.removeAttribute('theme-mode');
+      document.body.removeAttribute('arco-theme');
     }
   }, [theme]);
 
