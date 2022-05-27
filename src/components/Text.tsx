@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled, { StyledTags } from '@emotion/styled';
 
 type IText = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   as?: keyof JSX.IntrinsicElements;
   className?: string | string[];
 };
