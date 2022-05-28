@@ -24,7 +24,13 @@ const LoginPage: FC<ILoginPage> = (props) => {
           <Input placeholder={`用户名`}></Input>
           <Input placeholder={`密码`}></Input>
           <Input placeholder={`验证码`}></Input>
-          <Button long type={`primary`}>
+          <Button
+            long
+            type={`primary`}
+            onClick={() => {
+              login('admin', () => {});
+              nav(-1);
+            }}>
             登录
           </Button>
 
