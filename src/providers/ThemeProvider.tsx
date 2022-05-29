@@ -7,12 +7,16 @@ const ThemeContext = createContext<ThemeContextType>(null!);
 type themeType = 'dark' | 'light';
 interface ThemeContextType {
   theme: themeType;
+  darK: boolean;
   setTheme: Dispatch<SetStateAction<themeType>>;
   toggleTheme: () => void;
 }
 const ThemeProvider = ({ children }: any) => {
   // const [theme, setTheme] = useState<themeType>('light');
   const [theme, setTheme] = useRecoilState(themeState);
+  const isDark = useMemo(() => {
+    return theme === 'dark';
+  }, [theme]);
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -29,7 +33,7 @@ const ThemeProvider = ({ children }: any) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, darK: isDark }}>
       {children}
     </ThemeContext.Provider>
   );
