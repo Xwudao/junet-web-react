@@ -14,11 +14,12 @@ const LoginPage: FC<ILoginPage> = (props) => {
   const nav = useNavigate();
   const { login } = useAuth();
   return (
-    <Paper className={`dark:bg-black h-full flex flex-col justify-center items-center`}>
+    <Paper
+      className={`kk dark:bg-black h-full flex flex-col justify-center items-center`}>
       <LoginWrapper className={`shadow rounded p-5 w-11/12 sm:w-150 flex sm:p-5`}>
         <img src={noAccess} alt="no access" className={`hidden sm:block w-1/2`} />
         <section className={`form space-y-2 w-full sm:w-1/2`}>
-          <Text as={'h3'} className={`font-bold text-lg text-center mb-3`}>
+          <Text as={'h3'} className={`kk font-bold text-lg text-center mb-3`}>
             登录系统
           </Text>
           <Input placeholder={`用户名`}></Input>

@@ -2,6 +2,7 @@ import { defineConfig } from 'unocss';
 import UnocssIcons from '@unocss/preset-icons';
 import presetAttributify from '@unocss/preset-attributify';
 import presetWind from '@unocss/preset-wind';
+import transformerCompileClass from '@unocss/transformer-compile-class';
 
 export default defineConfig({
   rules: [],
@@ -26,6 +27,12 @@ export default defineConfig({
         'vertical-align': 'middle',
         display: 'inline-block',
       },
+    }),
+  ],
+  transformers: [
+    //@ts-ignore
+    transformerCompileClass({
+      trigger: 'kk',
     }),
   ],
 });
