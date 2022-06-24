@@ -23,7 +23,8 @@
     "react-router-dom": "^6.3.0",
     "recoil": "^0.7.2",
     "recoil-persist": "^4.1.0",
-    "sass": "^1.51.0"
+    "sass": "^1.51.0",
+    "zustand": "4.0.0-rc.1"
   },
   "devDependencies": {
     "@arco-plugins/vite-react": "^1.1.0",

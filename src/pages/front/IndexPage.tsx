@@ -25,6 +25,9 @@ const IndexPage: FC<IIndexPage> = (props) => {
           Only show On SM
         </Text>
       </OnMdAbove>
+      <div className="text-red-1 bg-arcoblue-6 border-arco-border-1 border-solid">
+        Should Fill Something Here
+      </div>
     </Paper>
   );
 };

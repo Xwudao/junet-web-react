@@ -1,19 +1,17 @@
-import { createContext, Dispatch, SetStateAction, useContext, useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import { themeState } from '@/store/store';
+import { createContext, useContext, useEffect } from 'react';
+import { useThemeState } from '@/store';
 
 const ThemeContext = createContext<ThemeContextType>(null!);
 
-type themeType = 'dark' | 'light';
+type themeType = 'dark' | 'light' | string;
 interface ThemeContextType {
   theme: themeType;
   darK: boolean;
-  setTheme: Dispatch<SetStateAction<themeType>>;
+  setTheme: (theme: 'dark' | 'light' | string) => void;
   toggleTheme: () => void;
 }
 const ThemeProvider = ({ children }: any) => {
-  // const [theme, setTheme] = useState<themeType>('light');
-  const [theme, setTheme] = useRecoilState(themeState);
+  const { theme, setTheme } = useThemeState();
   const isDark = useMemo(() => {
     return theme === 'dark';
   }, [theme]);
