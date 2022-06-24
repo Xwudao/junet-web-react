@@ -25,13 +25,11 @@ module.exports = {
     './.eslintrc-auto-import.json',
     'plugin:prettier/recommended', // Make sure this is always the last element in the array.
   ],
-  plugins: ['simple-import-sort', 'prettier'],
+  plugins: ['prettier'],
   rules: {
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'react/prop-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    'simple-import-sort/imports': 'warn',
-    'simple-import-sort/exports': 'warn',
     'no-unused-vars': 'off',
   },
 };

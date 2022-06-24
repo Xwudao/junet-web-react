@@ -1,26 +1,28 @@
-import { createContext, Dispatch, SetStateAction, useContext, useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import { themeState } from '@/store/store';
+import { createContext, useContext, useEffect } from 'react';
+import { useThemeState } from '@/store';
 
 const ThemeContext = createContext<ThemeContextType>(null!);
 
-type themeType = 'dark' | 'light';
+type themeType = 'dark' | 'light' | string;
 interface ThemeContextType {
   theme: themeType;
-  setTheme: Dispatch<SetStateAction<themeType>>;
+  darK: boolean;
+  setTheme: (theme: 'dark' | 'light' | string) => void;
   toggleTheme: () => void;
 }
 const ThemeProvider = ({ children }: any) => {
-  // const [theme, setTheme] = useState<themeType>('light');
-  const [theme, setTheme] = useRecoilState(themeState);
+  const { theme, setTheme } = useThemeState();
+  const isDark = useMemo(() => {
+    return theme === 'dark';
+  }, [theme]);
 
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
-      document.body.setAttribute('theme-mode', 'dark');
+      document.body.setAttribute('arco-theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
-      document.body.removeAttribute('theme-mode');
+      document.body.removeAttribute('arco-theme');
     }
   }, [theme]);
 
@@ -29,7 +31,7 @@ const ThemeProvider = ({ children }: any) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, darK: isDark }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -10,7 +10,7 @@ interface AuthContextType {
 let AuthContext = createContext<AuthContextType>(null!);
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState('your are logged(mock data)');
   let login = (user: string, callback: VoidFunction) => {
     setUser(user);
     callback();
