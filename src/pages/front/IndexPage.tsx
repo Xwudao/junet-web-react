@@ -28,6 +28,10 @@ const IndexPage: FC<IIndexPage> = (props) => {
       <div className="text-red-1 bg-arcoblue-6 border-arco-border-1 border-solid">
         Should Fill Something Here
       </div>
+
+      <div>
+        <h1 className={`dark:text-white`}>h1 text</h1>
+      </div>
     </Paper>
   );
 };

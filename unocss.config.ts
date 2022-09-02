@@ -1,8 +1,9 @@
 import { defineConfig } from 'unocss';
 import UnocssIcons from '@unocss/preset-icons';
 import presetAttributify from '@unocss/preset-attributify';
-import presetWind from '@unocss/preset-wind';
+import presetWind, { Theme } from '@unocss/preset-wind';
 import transformerCompileClass from '@unocss/transformer-compile-class';
+import themePreset from 'uno-preset-dark-theme';
 
 export default defineConfig({
   rules: [],
@@ -15,6 +16,8 @@ export default defineConfig({
     },
   },
   presets: [
+    //@ts-ignore
+    themePreset({ pureCssVariables: {} }),
     //@ts-ignore
     presetWind(),
     //@ts-ignore
