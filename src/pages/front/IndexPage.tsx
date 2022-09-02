@@ -14,9 +14,7 @@ const IndexPage: FC<IIndexPage> = (props) => {
   const { toggleTheme } = useTheme();
   return (
     <Paper className={`w-full h-full p-3`}>
-      <Text as={`span`} className={`block text-lg mb-2`}>
-        Change Theme
-      </Text>
+      <span className={`block text-txt-emphasize text-lg mb-2`}>Change Theme</span>
       <Button type={`primary`} onClick={toggleTheme}>
         change theme
       </Button>
@@ -25,13 +23,30 @@ const IndexPage: FC<IIndexPage> = (props) => {
           Only show On SM
         </Text>
       </OnMdAbove>
-      <div className="text-red-1 bg-arcoblue-6 border-arco-border-1 border-solid">
-        Should Fill Something Here
-      </div>
+      <div className="text-txt-secondary border-solid">Should Fill Something Here</div>
 
       <div>
-        <h1 className={`dark:text-white`}>h1 text</h1>
+        <h1 className={`dark:text-white bg-primary hover:bg-primary-hover`}>h1 text</h1>
       </div>
+
+      <section className={``}>
+        <div className={`text-txt-emphasize`}>Text:</div>
+
+        <div>
+          <p className={`text-success hover:text-success-hover`}>SUCCESS</p>
+          <p className={`text-warning hover:text-warning-hover`}>WARNING</p>
+          <p className={`text-danger hover:text-danger-hover`}>DANGER</p>
+          <p className={`text-txt-emphasize`}>emphasize</p>
+        </div>
+      </section>
+
+      <section>
+        <div className={`text-txt-emphasize`}>Border:</div>
+        <div className={`space-y-3`}>
+          <p className={`border-bd-light text-txt-emphasize`}>hello</p>
+          <p className={`bg-bg-material  text-txt-emphasize`}>fasjfisf</p>
+        </div>
+      </section>
     </Paper>
   );
 };
