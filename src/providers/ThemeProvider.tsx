@@ -20,9 +20,11 @@ const ThemeProvider = ({ children }: any) => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
       document.body.setAttribute('arco-theme', 'dark');
+      document.body.setAttribute('data-theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
       document.body.removeAttribute('arco-theme');
+      document.body.removeAttribute('data-theme');
     }
   }, [theme]);
 
