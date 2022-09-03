@@ -39,6 +39,7 @@ specifiers:
   recoil: ^0.7.2
   recoil-persist: ^4.1.0
   sass: ^1.51.0
+  strcase: ^0.0.3
   tailwindcss: ^3.0.24
   typescript: ^4.6.3
   uno-preset-dark-theme: ^0.0.6
@@ -67,6 +68,7 @@ dependencies:
   recoil: 0.7.5_biqbaboplfbrettd7655fr4n2y
   recoil-persist: 4.2.0_recoil@0.7.5
   sass: 1.54.8
+  strcase: 0.0.3
   uno-preset-dark-theme: 0.0.6
   zustand: 4.0.0-rc.1_react@18.2.0
 
@@ -3593,6 +3595,10 @@ packages:
 
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+
+  /strcase/0.0.3:
+    resolution: {integrity: sha512-aD92amQc/62xen/O12KSUuTc6gJ7hc+ot3pWSYrlQFRzEpsAbP6sIDV2nZRxRL/BeGssEMadKZnTOYcKhS8BFg==}
+    dev: false
 
   /string.prototype.matchall/4.0.7:
     resolution: {integrity: sha512-f48okCX7JiwVi1NXCVWcFnZgADDC/n2vePlQ/KUCNqCikLLilQvwjMO8+BHVKvgzH0JB0J9LEPgxOGT02RoETg==}
