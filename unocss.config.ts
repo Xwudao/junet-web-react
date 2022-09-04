@@ -65,7 +65,7 @@ export default defineConfig({
           gray: 'var(--color-text-4)',
         },
         bg: {
-          main: 'var(--color-bg-1))',
+          main: 'var(--color-bg-1)',
           primary: 'var(--color-bg-2)',
           secondary: 'var(--color-bg-3)',
           third: 'var(--color-bg-4)',
