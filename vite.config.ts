@@ -22,6 +22,15 @@ export default defineConfig({
   },
   build: {
     minify: 'esbuild',
+    // rollupOptions: {
+    //   external: ['react'],
+    //   output: {
+    //     globals: { react: 'React' },
+    //     paths: {
+    //       react: 'https://g.alicdn.com/code/lib/react/17.0.2/umd/react.production.min.js',
+    //     },
+    //   },
+    // },
     // terserOptions: { compress: { drop_debugger: true, drop_console: true } },
   },
   esbuild: {
