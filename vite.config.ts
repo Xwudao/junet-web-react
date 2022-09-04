@@ -2,6 +2,7 @@ import legacy from '@vitejs/plugin-legacy';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import * as path from 'path';
+import injectExternals from 'vite-plugin-inject-externals';
 import UnoCSS from 'unocss/vite';
 import UnocssIcons from '@unocss/preset-icons';
 import AutoImport from 'unplugin-auto-import/vite';
@@ -12,6 +13,7 @@ const resolve = (p: string) => {
   return path.resolve(__dirname, p);
 };
 // https://vitejs.dev/config/
+const isProd = process.env.NODE_ENV === 'production';
 // @ts-ignore
 export default defineConfig({
   resolve: {
@@ -19,13 +21,30 @@ export default defineConfig({
     extensions: ['.tsx', '.js', '.ts'],
   },
   build: {
-    minify: 'terser',
-    terserOptions: { compress: { drop_debugger: true, drop_console: true } },
+    minify: 'esbuild',
+    // terserOptions: { compress: { drop_debugger: true, drop_console: true } },
+  },
+  esbuild: {
+    drop: isProd ? ['console', 'debugger'] : [],
   },
   plugins: [
     UnoCSS(resolve('./uno.config.ts')),
     react(),
     checker({ typescript: true }),
+    // injectExternals({
+    //   modules: [
+    //     {
+    //       name: 'react',
+    //       global: 'React',
+    //       path: 'https://g.alicdn.com/code/lib/react/17.0.2/umd/react.production.min.js',
+    //     },
+    //     {
+    //       name: 'react-dom',
+    //       global: 'ReactDOM',
+    //       path: 'https://g.alicdn.com/code/lib/react-dom/17.0.2/umd/react-dom.production.min.js',
+    //     },
+    //   ],
+    // }),
     vitePluginForArco({}),
     AutoImport({
       imports: ['react', 'react-router-dom'],

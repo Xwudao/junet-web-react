@@ -1,3 +1,4 @@
+import AppRoutes from '@/router/AppRoutes';
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { ThemeProvider } from '@/providers/ThemeProvider';
@@ -11,9 +12,7 @@ const App = () => {
       <RecoilRoot>
         <AuthProvider>
           <ThemeProvider>
-            <Router>
-              <AppRoutesConfig />
-            </Router>
+            <AppRoutes />
             {/*<Suspense fallback={<PageLoading />}>*/}
             {/*  <AppRoutes />*/}
             {/*</Suspense>*/}
