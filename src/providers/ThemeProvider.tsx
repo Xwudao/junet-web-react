@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect } from 'react';
+import { createContext, useContext, useEffect, useMemo } from 'react';
 import { useThemeState } from '@/store';
 
 const ThemeContext = createContext<ThemeContextType>(null!);
