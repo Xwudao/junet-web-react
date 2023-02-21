@@ -1,6 +1,6 @@
 import { isDark } from '@/utils/dark';
 import create from 'zustand';
-import { persist } from 'zustand/middleware';
+import { devtools, persist } from 'zustand/middleware';
 
 type ThemeState = {
   theme: 'dark' | 'light' | string;
@@ -8,16 +8,16 @@ type ThemeState = {
 };
 
 const useThemeState = create<ThemeState>()(
-  persist(
-    (set, get) => ({
-      theme: isDark() ? 'dark' : 'light',
-      setTheme: (theme: 'dark' | 'light' | string) => {
-        set((state) => ({ ...state, theme }));
+  devtools(
+    persist(
+      (set) => ({
+        theme: isDark() ? 'dark' : 'light',
+        setTheme: (theme: 'dark' | 'light' | string) => set({ theme }),
+      }),
+      {
+        name: 'theme-save',
       },
-    }),
-    {
-      name: 'theme',
-    },
+    ),
   ),
 );
 export default useThemeState;

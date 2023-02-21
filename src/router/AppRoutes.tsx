@@ -19,7 +19,6 @@ const AppRoutes: FC<IAppRoutes> = (props) => {
           return (
             <Route
               key={item.path}
-              index={isIndex(item.path)}
               path={trimPath(item.path)}
               element={
                 <Suspense fallback={<PageLoading />}>

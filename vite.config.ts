@@ -1,6 +1,6 @@
 import vitePluginForArco from '@arco-plugins/vite-react';
 import legacy from '@vitejs/plugin-legacy';
-import react from '@vitejs/plugin-react';
+import react from "@vitejs/plugin-react-swc";
 import * as path from 'path';
 import UnoCSS from 'unocss/vite';
 import { defineConfig } from 'vite';
