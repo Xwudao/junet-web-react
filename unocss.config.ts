@@ -1,6 +1,7 @@
 import { defineConfig, presetUno } from 'unocss';
 import UnocssIcons from '@unocss/preset-icons';
 import transformerCompileClass from '@unocss/transformer-compile-class';
+import presetAutoprefixer from 'unocss-preset-autoprefixer';
 
 export default defineConfig({
   rules: [],
@@ -11,6 +12,7 @@ export default defineConfig({
   presets: [
     //@ts-ignore
     presetUno(),
+    presetAutoprefixer(),
     //@ts-ignore
     UnocssIcons({
       scale: 1,

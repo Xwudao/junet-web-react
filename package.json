@@ -26,6 +26,7 @@
     "strcase": "^0.0.3",
     "terser": "^5.15.0",
     "uno-preset-dark-theme": "^0.0.6",
+    "unocss-preset-autoprefixer": "^0.0.5",
     "vite-plugin-inject-externals": "^1.1.1",
     "zustand": "^4.3.3"
   },
@@ -43,6 +44,7 @@
     "@vitejs/plugin-react": "^1.3.1",
     "@vitejs/plugin-react-swc": "^3.2.0",
     "autoprefixer": "^10.4.5",
+    "browserslist": "^4.21.5",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -50,6 +52,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "lightningcss": "^1.19.0",
     "postcss": "^8.4.12",
     "prettier": "^2.6.2",
     "tailwindcss": "^3.0.24",
