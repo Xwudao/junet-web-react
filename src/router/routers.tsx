@@ -44,45 +44,13 @@ export const computedPath = (
   console.log('paths', paths);
   return paths;
 };
-let routes = [] as RouteObject[];
-// const cmps = computedPath(import.meta.glob('../pages/**/*Page.tsx'));
-// cmps.forEach((item) => {
-//   let route: RouteObject = {
-//     path: trimPath(item.path),
-//     index: isIndex(item.path),
-//     element: (
-//       <Suspense fallback={<PageLoading />}>
-//         <RequireAuth>
-//           <item.Cmp />
-//         </RequireAuth>
-//       </Suspense>
-//     ),
-//   };
-//
-//   if (item.children.length > 0) {
-//     route.children = item.children.map((child) => {
-//       return {
-//         path: trimPath(child.path),
-//         index: isIndex(child.path),
-//         element: (
-//           <Suspense fallback={<CmpLoading />}>
-//             <RequireAuth>
-//               <child.Cmp />
-//             </RequireAuth>
-//           </Suspense>
-//         ),
-//       };
-//     });
-//   }
-//   routes.push(route);
-// });
 
 let pageRE = /(\w+)Page\./i;
 export const loadCmp = (
   loadPages: Record<string, () => Promise<{ [p: string]: any }>>,
   pathFun?: (p: string) => string,
 ) => {
-  pathFun = pathFun || ((p) => p);
+  pathFun = pathFun || ((p) => `/${p}`);
   let result = [];
   for (let ky in loadPages) {
     let res = pageRE.exec(loadPages[ky].name);
@@ -103,5 +71,10 @@ export const loadCmp = (
 //   path: '*',
 //   element: <NotFound />,
 // });
+
+let routes = [] as RouteObject[];
+
+
+
 
 export default routes;

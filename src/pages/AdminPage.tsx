@@ -43,17 +43,9 @@ const AdminPage: FC<IAdminPage> = (props) => {
           <section className={`flex items-center space-x-3`}>
             <div className="mode inline-block" onClick={toggleTheme}>
               {theme === 'dark' ? (
-                <Icon
-                  icon={`i-carbon-sun`}
-                  autoMode
-                  className={`text-lg cursor-pointer`}
-                />
+                <Icon icon={`i-carbon-sun`} className={`text-lg cursor-pointer`} />
               ) : (
-                <Icon
-                  icon={`i-carbon-moon`}
-                  autoMode
-                  className={`text-lg cursor-pointer`}
-                />
+                <Icon icon={`i-carbon-moon`} className={`text-lg cursor-pointer`} />
               )}
             </div>
           </section>

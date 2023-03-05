@@ -3,15 +3,19 @@ import Text from '@/components/Text';
 
 type IIcon = {
   icon: string;
-  className?: string | string[];
-  autoMode?: boolean;
+  className?: string;
+  colorName?: string;
   onClick?: () => void;
 };
-const Icon: FC<IIcon> = ({ icon, onClick, autoMode = false, className }) => {
-  if (autoMode) {
-    return <Text as={`i`} className={`${icon} ${className}`} onClick={onClick} />;
-  }
-  return <i className={`${icon} ${className}`} onClick={onClick} />;
+const Icon: FC<IIcon> = ({ icon, onClick, colorName = '', className = '' }) => {
+  return (
+    <i
+      className={`${icon} ${className} ${
+        colorName !== '' ? colorName : 'dark:text-white-gray'
+      }`}
+      onClick={onClick}
+    />
+  );
 };
 
 export default Icon;

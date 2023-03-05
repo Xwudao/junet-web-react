@@ -5,17 +5,27 @@ import NotFound from '@/pages/common/NotFound';
 import CmpLoading from '@/components/CmpLoading';
 import PageLoading from '@/components/PageLoading';
 import { RequireAuth } from '@/providers/AuthProvider';
-import { computedPath } from '@/router/routers';
+import { computedPath, loadCmp } from '@/router/routers';
 
-const cmps = computedPath(import.meta.glob('../pages/**/*Page.tsx'));
+// const cmps = computedPath(import.meta.glob('../pages/**/*Page.tsx'));
 
+const FrontPages = loadCmp(import.meta.glob('../pages/front/*Page.tsx'), (p) => {
+  switch (p) {
+    // case 'detail':
+    //   return `/detail/:id`;
+    default:
+      return `/${p}`;
+  }
+});
+const TopPages = loadCmp(import.meta.glob('../pages/*Page.tsx'));
+console.log('top pages', TopPages);
 type IAppRoutes = {};
 const AppRoutes: FC<IAppRoutes> = (props) => {
   console.log('appRoutes render...');
   return (
     <Router>
       <Routes>
-        {cmps.map((item) => {
+        {FrontPages.map((item) => {
           return (
             <Route
               key={item.path}
@@ -26,24 +36,22 @@ const AppRoutes: FC<IAppRoutes> = (props) => {
                     <item.Cmp />
                   </RequireAuth>
                 </Suspense>
-              }>
-              {item.children?.map((child) => {
-                return (
-                  <Route
-                    key={child.path}
-                    index={isIndex(child.path)}
-                    path={trimPath(child.path)}
-                    element={
-                      <Suspense fallback={<CmpLoading />}>
-                        <RequireAuth>
-                          <child.Cmp />
-                        </RequireAuth>
-                      </Suspense>
-                    }
-                  />
-                );
-              })}
-            </Route>
+              }></Route>
+          );
+        })}
+        {/*top pages*/}
+        {TopPages.map((item) => {
+          return (
+            <Route
+              key={item.path}
+              path={trimPath(item.path)}
+              element={
+                <Suspense fallback={<PageLoading />}>
+                  <RequireAuth>
+                    <item.Cmp />
+                  </RequireAuth>
+                </Suspense>
+              }></Route>
           );
         })}
         {/*<Route*/}

@@ -11,7 +11,7 @@ const Text: FC<IText> = ({ as, children, onClick, className }) => {
   console.log('text render...');
   const Container = styled(as ? as : 'p')``;
   return (
-    <Container className={`dark:text-whiteGray ${className}`} onClick={onClick}>
+    <Container className={`dark:text-white-gray ${className}`} onClick={onClick}>
       {children}
     </Container>
   );

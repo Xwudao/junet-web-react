@@ -1,9 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { getAuthNumber } from '@/utils/auth';
 
 interface AuthContextType {
   user: any;
+  logged: boolean;
   login: (user: string, callback: VoidFunction) => void;
   logout: (callback: VoidFunction) => void;
 }
@@ -11,6 +12,7 @@ let AuthContext = createContext<AuthContextType>(null!);
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState('your are logged(mock data)');
+  const logged = useMemo(() => user !== '', [user]);
   let login = (user: string, callback: VoidFunction) => {
     setUser(user);
     callback();
@@ -21,7 +23,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, logged }}>
       {children}
     </AuthContext.Provider>
   );
