@@ -1,5 +1,5 @@
 import { isDark } from '@/utils/dark';
-import create from 'zustand';
+import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
 type ThemeState = {
