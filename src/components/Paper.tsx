@@ -9,7 +9,7 @@ type IPaper = {
 const Paper: FC<IPaper> = ({ as, children, className = '' }) => {
   console.log('paper render...');
 
-  const Container = styled(as ? as : 'section')``;
+  const Container = useMemo(() => styled(as ? as : 'section')``, [as]);
   return (
     <Container className={`bg-white dark:bg-black ${className}`}>{children}</Container>
   );
