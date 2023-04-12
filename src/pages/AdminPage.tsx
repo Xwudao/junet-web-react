@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import Paper from '@/components/Paper';
+import Pager from '@/components/Pager';
 import Text from '@/components/Text';
 import Icon from '@/components/Icon';
 import {
@@ -32,7 +32,7 @@ const AdminPage: FC<IAdminPage> = (props) => {
 
   return (
     <>
-      <Paper className={`h-full flex flex-col`}>
+      <Pager className={`h-full flex flex-col`}>
         {/*  header*/}
         <header className={`h-15 flex items-center justify-between shadow px-5`}>
           <section className={``}>
@@ -111,7 +111,7 @@ const AdminPage: FC<IAdminPage> = (props) => {
             {/*})}*/}
           </section>
         </main>
-      </Paper>
+      </Pager>
     </>
   );
 };

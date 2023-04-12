@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useMemo } from 'react';
 import styled from '@emotion/styled';
 
 type IPaper = {
@@ -6,7 +6,7 @@ type IPaper = {
   as?: keyof JSX.IntrinsicElements;
   className?: string;
 };
-const Paper: FC<IPaper> = ({ as, children, className = '' }) => {
+const Pager: FC<IPaper> = ({ as, children, className = '' }) => {
   console.log('paper render...');
 
   const Container = useMemo(() => styled(as ? as : 'section')``, [as]);
@@ -15,4 +15,4 @@ const Paper: FC<IPaper> = ({ as, children, className = '' }) => {
   );
 };
 
-export default Paper;
+export default Pager;

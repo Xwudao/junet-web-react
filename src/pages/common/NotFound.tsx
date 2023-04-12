@@ -2,7 +2,7 @@ import React from 'react';
 import notFound from '@/assets/illustrations/404.svg';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@arco-design/web-react';
-import Paper from '@/components/Paper';
+import Pager from '@/components/Pager';
 import Text from '@/components/Text';
 import Surface from '@/components/Surface';
 const NotFound = () => {
@@ -11,7 +11,7 @@ const NotFound = () => {
 
   return (
     <>
-      <Paper as={`section`} className={`h-full flex items-center justify-center`}>
+      <Pager as={`section`} className={`h-full flex items-center justify-center`}>
         <Surface className={` px-3 sm:px-0 w-full sm:w-200 rounded`}>
           <div className="box shadow dark:border dark:border-gray/20 flex rounded sm:flex-row flex-col items-center">
             <img src={notFound} alt="not found" className={`w-1/2`} />
@@ -38,7 +38,7 @@ const NotFound = () => {
             </section>
           </div>
         </Surface>
-      </Paper>
+      </Pager>
     </>
   );
 };

@@ -4,14 +4,14 @@ import wait from '@/assets/illustrations/wait.svg';
 import { Button, Input } from '@arco-design/web-react';
 
 import { Link } from 'react-router-dom';
-import Paper from '@/components/Paper';
+import Pager from '@/components/Pager';
 import Text from '@/components/Text';
 import Surface from '@/components/Surface';
 type IRegisterPage = {};
 const RegisterPage: FC<IRegisterPage> = (props) => {
   console.log('registerPage render...');
   return (
-    <Paper className={`dark:bg-black h-full flex flex-col justify-center items-center`}>
+    <Pager className={`dark:bg-black h-full flex flex-col justify-center items-center`}>
       <Surface className={`shadow rounded p-10 w-11/12 sm:w-150 flex sm:p-10`}>
         <img src={wait} alt="no access" className={`hidden sm:block w-1/2`} />
         <section className={`form space-y-5 w-full sm:w-1/2`}>
@@ -38,7 +38,7 @@ const RegisterPage: FC<IRegisterPage> = (props) => {
           </section>
         </section>
       </Surface>
-    </Paper>
+    </Pager>
   );
 };
 

@@ -4,7 +4,7 @@ import noAccess from '@/assets/illustrations/no-access.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Input } from '@arco-design/web-react';
 import { useAuth } from '@/providers/AuthProvider';
-import Paper from '@/components/Paper';
+import Pager from '@/components/Pager';
 import Text from '@/components/Text';
 import Surface from '@/components/Surface';
 
@@ -14,7 +14,7 @@ const LoginPage: FC<ILoginPage> = (props) => {
   const nav = useNavigate();
   const { login } = useAuth();
   return (
-    <Paper
+    <Pager
       className={`kk dark:bg-black h-full flex flex-col justify-center items-center`}>
       <Surface className={`shadow rounded p-8 w-11/12 sm:w-150 flex sm:p-10`}>
         <img src={noAccess} alt="no access" className={`hidden sm:block w-1/2`} />
@@ -48,7 +48,7 @@ const LoginPage: FC<ILoginPage> = (props) => {
           </section>
         </section>
       </Surface>
-    </Paper>
+    </Pager>
   );
 };
 

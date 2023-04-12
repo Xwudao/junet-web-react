@@ -5,9 +5,7 @@ import presetAutoprefixer from 'unocss-preset-autoprefixer';
 
 export default defineConfig({
   rules: [],
-  shortcuts: {
-    'font-1': 'text-2xl font-bold',
-  },
+  shortcuts: {},
   theme: {},
   presets: [
     //@ts-ignore

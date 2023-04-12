@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Paper from '@/components/Paper';
+import Pager from '@/components/Pager';
 import Text from '@/components/Text';
 import { Button, Divider } from '@arco-design/web-react';
 import { useTheme } from '@/providers/ThemeProvider';
@@ -17,7 +17,7 @@ const IndexPage: FC<IIndexPage> = (props) => {
   const { toggleTheme } = useTheme();
   const { logged, logout } = useAuth();
   return (
-    <Paper className={`w-full h-full  flex items-center justify-center`}>
+    <Pager className={`w-full h-full  flex items-center justify-center`}>
       <Surface className="card shadow-lg border-1 p-6 w-md rounded-lg space-y-4">
         <Text className="title font-bold text-lg">无道个人模板</Text>
         <Divider />
@@ -71,7 +71,7 @@ const IndexPage: FC<IIndexPage> = (props) => {
           </Text>
         </div>
       </Surface>
-    </Paper>
+    </Pager>
   );
 };
 

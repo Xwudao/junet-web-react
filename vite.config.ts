@@ -36,7 +36,7 @@ export default defineConfig({
     drop: isProd ? ['console', 'debugger'] : [],
   },
   plugins: [
-    UnoCSS(resolve('./uno.config.ts')),
+    UnoCSS(resolve('./unocss.config.ts')),
     react(),
     checker({ typescript: true }),
     vitePluginForArco({}),
