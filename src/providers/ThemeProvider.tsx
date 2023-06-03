@@ -3,32 +3,34 @@ import { useThemeState } from '@/store';
 
 const ThemeContext = createContext<ThemeContextType>(null!);
 
-type themeType = 'dark' | 'light' | string;
+export type ThemeType = 'dark' | 'light' | 'auto' | string;
+export type ThemeMode = 'auto' | 'manual';
 interface ThemeContextType {
-  theme: themeType;
+  theme: ThemeType;
   darK: boolean;
-  setTheme: (theme: 'dark' | 'light' | string) => void;
+  setTheme: (theme: ThemeType) => void;
   toggleTheme: () => void;
 }
 const ThemeProvider = ({ children }: any) => {
-  const { theme, setTheme } = useThemeState();
+  const { theme, setTheme, themeMode, setThemeMode } = useThemeState();
   const isDark = useMemo(() => {
-    return theme === 'dark';
-  }, [theme]);
+    return (themeMode === 'auto' && isSystemDark()) || theme === 'dark';
+  }, [theme, themeMode]);
+
+  const isSystemDark = () => {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    return darkModeMediaQuery.matches;
+  };
 
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
       document.body.setAttribute('arco-theme', 'dark');
-      // document.body.classList.add('dark');
-      // document.body.setAttribute('data-theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
       document.body.removeAttribute('arco-theme');
-      // document.body.classList.remove('dark');
-      // document.body.removeAttribute('data-theme');
     }
-  }, [theme]);
+  }, [theme, themeMode]);
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
