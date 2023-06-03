@@ -9,6 +9,8 @@ import MediaQuery from 'react-responsive';
 import Surface from '@/components/Surface';
 import Icon from '@/components/Icon';
 import { useAuth } from '@/providers/AuthProvider';
+import CmpLoading from '@/components/CmpLoading';
+import PageLoading from '@/components/PageLoading';
 
 type IIndexPage = {};
 const IndexPage: FC<IIndexPage> = (props) => {

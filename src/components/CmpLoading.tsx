@@ -1,16 +1,14 @@
 import React, { FC } from 'react';
-import Pager from '@/components/Pager';
+import classes from './page.module.scss';
 
 type ICmpLoading = { text?: string };
 const CmpLoading: FC<ICmpLoading> = ({ text }) => {
   console.log('cmpLoading render...');
   return (
-    <Pager
-      as={`section`}
-      className={`dark:bg-black z-30 h-full w-full text-center flex justify-center items-center flex-col`}>
-      <i className="i-eos-icons-loading text-4xl text-primary"></i>
-      <span className={`text-primary mt-1`}>{text ? text : 'Loading...'}</span>
-    </Pager>
+    <div className={classes.cmpLoading}>
+      <i className={`i-eos-icons-loading ${classes.cmpLoadingIcon}`}></i>
+      <span className={``}>{text ? text : 'Loading...'}</span>
+    </div>
   );
 };
 
