@@ -44,5 +44,12 @@ export default defineConfig({
       targets: ['defaults', 'not IE 11'],
     }),
   ],
-  css: { modules: { localsConvention: 'camelCase' } },
+  css: {
+    modules: { localsConvention: 'camelCase' },
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/assets/styles/global.scss";',
+      },
+    },
+  },
 });

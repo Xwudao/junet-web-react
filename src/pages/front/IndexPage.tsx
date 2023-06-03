@@ -11,6 +11,7 @@ import Icon from '@/components/Icon';
 import { useAuth } from '@/providers/AuthProvider';
 import CmpLoading from '@/components/CmpLoading';
 import PageLoading from '@/components/PageLoading';
+import classes from './page.module.scss';
 
 type IIndexPage = {};
 const IndexPage: FC<IIndexPage> = (props) => {
@@ -21,7 +22,7 @@ const IndexPage: FC<IIndexPage> = (props) => {
   return (
     <Pager className={`w-full h-full  flex items-center justify-center`}>
       <Surface className="card shadow-lg border-1 p-6 w-md rounded-lg space-y-4">
-        <Text className="title font-bold text-lg">无道个人模板</Text>
+        <span className={classes.index}>无道个人模板</span>
         <Divider />
 
         <div>
